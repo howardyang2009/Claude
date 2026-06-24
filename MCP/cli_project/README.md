@@ -9,6 +9,12 @@ MCP Chat is a command-line interface application that enables interactive chat c
 
 ## Setup
 
+_You must have FFmpeg already installed to convert a video file_. To install FFmpeg on MacOS run:
+
+```
+brew install ffmpeg
+```
+
 ### Step 1: Configure the environment variables
 
 1. Create or edit the `.env` file in the project root and verify that the following variables are set correctly:
@@ -68,6 +74,27 @@ pip install anthropic python-dotenv prompt-toolkit "mcp[cli]==1.8.0"
 ```bash
 python main.py
 ```
+
+## Features
+
+### File System Access
+
+The server can only access files and directories within the specified root paths. This provides security by limiting file system access to approved locations.
+
+### Available Tools
+
+- **list_roots**: List all accessible root directories
+- **read_dir**: Read contents of a directory (must be within a root)
+- **convert_video**: Convert MP4 videos to other formats (avi, mov, webm, mkv, gif)
+
+### Video Conversion
+
+The video conversion tool uses FFmpeg to convert MP4 files to various formats:
+
+- Standard video formats: AVI, MOV, WebM, MKV
+- GIF conversion with optimized settings
+- Medium quality preset for balanced file size and quality
+
 
 ## Usage
 

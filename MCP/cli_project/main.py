@@ -26,7 +26,15 @@ assert anthropic_api_key, (
 async def main():
     claude_service = Claude(model=claude_model)
 
-    server_scripts = sys.argv[1:]
+    #server_scripts = sys.argv[1:]
+    server_scripts=[]
+    # Get root directories from command line arguments
+    root_paths = sys.argv[1:]
+    if not root_paths:
+        print("Usage: uv run main.py <root1> [root2] ...")
+        print("Example: uv run main.py /path/to/videos /another/path")
+        sys.exit(1)
+
     clients = {}
 
     command, args = (
@@ -37,7 +45,7 @@ async def main():
 
     async with AsyncExitStack() as stack:
         doc_client = await stack.enter_async_context(
-            MCPClient(command=command, args=args)
+            MCPClient(command=command, args=args, roots=root_paths)
         )
         clients["doc_client"] = doc_client
 
