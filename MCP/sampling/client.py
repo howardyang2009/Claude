@@ -10,6 +10,7 @@ from mcp.types import (
     CreateMessageResult,
     TextContent,
     SamplingMessage,
+    LoggingMessageNotificationParams,
 )
 
 
@@ -75,16 +76,35 @@ async def sampling_callback(
     )
 
 
+async def logging_callback(params: LoggingMessageNotificationParams):
+    print(params.data)
+
+
+async def print_progress_callback(
+    progress: float, total: float | None, message: str | None
+):
+    if total is not None:
+        percentage = (progress / total) * 100
+        print(f"Progress: {progress}/{total} ({percentage:.1f}%)")
+    else:
+        print(f"Progress: {progress}")
+
 async def run():
     async with stdio_client(server_params) as (read, write):
         async with ClientSession(
-            read, write, sampling_callback=sampling_callback
+            read, write, sampling_callback=sampling_callback, logging_callback=logging_callback
         ) as session:
             await session.initialize()
 
+            # result = await session.call_tool(
+            #     name="summarize",
+            #     arguments={"text_to_summarize": "lots of text"},
+            # )
+
             result = await session.call_tool(
-                name="summarize",
-                arguments={"text_to_summarize": "lots of text"},
+                name = "add",
+                arguments={"a":1, "b":2},
+                progress_callback=print_progress_callback,
             )
             print(result.content)
 

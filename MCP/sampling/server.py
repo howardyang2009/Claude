@@ -1,3 +1,4 @@
+import asyncio
 from mcp.server.fastmcp import FastMCP, Context
 from mcp.types import SamplingMessage, TextContent
 
@@ -25,6 +26,18 @@ async def summarize(text_to_summarize: str, ctx: Context):
         return result.content.text
     else:
         raise ValueError("Sampling failed")
+
+@mcp.tool()
+async def add(a: int, b: int, ctx: Context) -> int:
+    await ctx.info("Preparing to add...")
+    await ctx.report_progress(20, 100)
+
+    await asyncio.sleep(2)
+
+    await ctx.info("OK, adding...")
+    await ctx.report_progress(80, 100)
+
+    return a + b
 
 
 if __name__ == "__main__":
