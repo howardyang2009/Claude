@@ -41,4 +41,5 @@ async def add(a: int, b: int, ctx: Context) -> int:
 
 
 if __name__ == "__main__":
-    mcp.run(transport="stdio")
+    mcp.run(transport="streamable-http")  # Server-Sent Events
+#    mcp.run(transport="stdio")
