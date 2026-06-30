@@ -13,13 +13,14 @@
 
 ## stripe
 * sign-in with google account: howardyang2009@gmail.com
-* business name: [RheinWeg](https://dashboard.stripe.com/acct_1TnDi42ELQtoolNT/test/dashboard)
+* business name: [RheinWeg Sandbox](https://dashboard.stripe.com/acct_1TnDi42ELQtoolNT/test/dashboard)
 * created one product gelbweiten-to-xlsx for one-off 10eur price
 * create aiblocks-vercel-stripe-webhook
 * [Stripe Test Credit Card](https://docs.stripe.com/testing#cards)
 * go live [stripe](https://dashboard.stripe.com/acct_1TnDhsFzpUGk5t7K/dashboard) 
 * create aiblocks-vercel-stripe-webhook again 
 * add connected account https://aiblocks-six.vercel.app/dashboard/seller/stripe
+* pending approval paypal payment method in stripe -> rejected (Paypal in Europe do not support B2C business)
 
 ## vercel
 * sign-up with Github account
@@ -34,6 +35,7 @@
 4. un-publish user checkout, download, and star works fine
 5. deploy to vercel, in stripe, create aiblocks-vercel-stripe-webhook, redeploy
 6. first payment to go live stripe connected account works fine
+7. 2 docs works fine
 
 ## open questions
-- [ ] how a seller connect their stripe account to our stripe account, whether they really need one stripe account, or maybe they just do stripe connected account onboarding and during publish components, they just provide their Bank account info. then we send they earned money to their bank account every week?
+- [x] how a seller connect their stripe account to our stripe account, whether they really need one stripe account, or maybe they just do stripe connected account onboarding and during publish components, they just provide their Bank account info. then we send they earned money to their bank account every week?
