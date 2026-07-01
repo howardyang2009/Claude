@@ -141,14 +141,14 @@ After changing any env var, redeploy for it to take effect.
 
 Test mode does **not** carry over to live automatically. When you're ready for real money:
 
-- [ ] Activate your Stripe account (business details, bank for payouts).
-- [ ] Swap Vercel env to **live** keys: `sk_live_…`, `pk_live_…`.
-- [ ] Create a **separate live-mode** webhook endpoint (live mode has its own
+- [x] Activate your Stripe account (business details, bank for payouts).
+- [x] Swap Vercel env to **live** keys: `sk_live_…`, `pk_live_…`.
+- [x] Create a **separate live-mode** webhook endpoint (live mode has its own
       endpoints and its own signing secret) → update `STRIPE_WEBHOOK_SECRET`.
-- [ ] Sellers re-onboard through **live** Connect.
+- [x] Sellers re-onboard through **live** Connect.
 - [ ] Switch Clerk to its production instance + live keys.
-- [ ] Replace placeholder Terms / Privacy with reviewed legal copy (Human-Led).
-- [ ] Redeploy and run one real low-value purchase to confirm payouts route correctly.
+- [x] Replace placeholder Terms / Privacy with reviewed legal copy (Human-Led).
+- [x] Redeploy and run one real low-value purchase to confirm payouts route correctly.
 
 ---
 
