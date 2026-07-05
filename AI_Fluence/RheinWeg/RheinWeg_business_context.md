@@ -7,7 +7,7 @@
 ## 1. Who
 
 - **Founder:** Liying Zhu. Chinese family, moved to Germany in 2016, now in Oberursel (Taunus), near Frankfurt.
-- **Team:** 2 people (founder + wife). Pre-revenue startup.
+- **Team:** 2 people (founder + husband). Pre-revenue startup.
 - **Background:** 20+ years IT experience; strong self-learning habit; comfortable with edge/emerging tech.
 - **Company:** RheinWeg (莱茵之路 / "Rhine Road"). Domain: rheinwegde.com. Contact: rheinwegde@gmail.com, +49 160 1168307.
 - **Core values:** help others; do no evil; use AI to do more so there's more time to innovate ways to help people.
