@@ -96,16 +96,16 @@ async def run():
         ) as session:
             await session.initialize()
 
-            # result = await session.call_tool(
-            #     name="summarize",
-            #     arguments={"text_to_summarize": "lots of text"},
-            # )
-
             result = await session.call_tool(
-                name = "add",
-                arguments={"a":1, "b":2},
-                progress_callback=print_progress_callback,
+                 name="summarize",
+                 arguments={"text_to_summarize": "Verdict: your server's sampling implementation is correct end-to-end — request construction, stream routing, correlation of the response, and final tool result all behave properly. The only failure is environmental: Claude Code doesn't implement the sampling/createMessage client capability, so the tool can't be used through this particular connection. To exercise it for real, use a client with sampling support — e.g. the MCP Inspector (npx @modelcontextprotocol/inspector), which lets you approve and fulfill sampling requests interactively, or a custom client built on an MCP SDK with a sampling_callback wired to an LLM.One small observation from the earlier tools/list: both tools have empty description fields — worth adding docstrings to the tool functions so clients know when to use them."},
             )
+
+            #result = await session.call_tool(
+            #    name = "add",
+            #    arguments={"a":1, "b":2},
+            #    progress_callback=print_progress_callback,
+            #)
             print(result.content)
 
 
